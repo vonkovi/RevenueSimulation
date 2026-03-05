@@ -1,0 +1,13 @@
+services:
+  simulation:
+    build: .
+    image: revenuesimulation-simulation
+    volumes:
+      - .:/app
+    ports:
+      - "8080:9000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    stdin_open: true
+    tty: true
+    entrypoint: ["/bin/bash", "-c"]
